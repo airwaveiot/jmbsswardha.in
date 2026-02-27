@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>छायाचित्रे</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Nirmala UI, sans-serif;
+    background:#f4f6fb;
+    overflow-x:hidden; /* prevents horizontal scroll */
+}
+
+/* Prevent overflow issues */
+*{
+    box-sizing:border-box;
+}
+
+.section {
+    text-align:center;
+    padding:40px 0 20px;
+}
+
+.section h3 {
+    font-size:28px;
+    font-weight:800;
+    color:#003366;
+    margin-bottom:10px;
+    border-bottom:4px solid #ffcc00;
+    display:inline-block;
+    padding-bottom:6px;
+}
+
+h1{
+    text-align:center;
+    padding:40px 0 20px;
+    color:#1a237e;
+}
+
+.gallery-container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px;
+    column-count:2;
+    column-gap:25px;
+}
+
+.gallery-container img{
+    width:100%;
+    height:auto;
+    display:block; /* better rendering */
+    margin-bottom:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.3s ease;
+    break-inside:avoid;
+}
+
+.gallery-container img:hover{
+    transform:scale(1.05);
+}
+
+.back-btn{
+    display:block;
+    width:200px;
+    max-width:90%; /* prevents overflow on small screens */
+    margin:40px auto;
+    text-align:center;
+    padding:12px;
+    background:#1a237e;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.top-btn{
+    margin:20px auto 20px;
+}
+
+.page-section{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px 0 0px 0;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+    .page-section{
+        margin:30px 0 10px 0;
+    }
+
+    .back-btn{
+        width:180px;
+        font-size:14px;
+        padding:10px;
+        margin:20px auto;
+    }
+
+    .top-btn{
+        margin-top:10px;
+        margin-bottom:15px;
+    }
+
+    /* Gallery layout → 1 column */
+    .gallery-container{
+        column-count:1;
+        padding:15px;
+        column-gap:15px;
+    }
+
+    .gallery-container img{
+        margin-bottom:20px;
+        border-radius:12px;
+    }
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="section">
+    <h3>छायाचित्रे (Gallery)</h3>
+</div>
+
+
+<a href="chintamani.html" class="back-btn top-btn">मागच्या पानावर जा</a>
+
+<div class="gallery-container" id="gallery"></div>
+
+<a href="chintamani.html" class="back-btn">मागच्या पानावर जा</a>
+
+<script>
+const gallery = document.getElementById("gallery");
+
+// List ALL image filenames from your images folder
+const images = [
+  "raosaheb/1.jpg",
+  "raosaheb/2.jpeg",
+  "raosaheb/3.jpeg",
+  "raosaheb/4.jpeg",
+  "raosaheb/5.jpeg",
+  "raosaheb/6.jpeg",
+  "raosaheb/7.jpeg",
+  "raosaheb/8.jpeg",
+  "raosaheb/9.jpeg",
+  "raosaheb/10.jpeg",
+  "raosaheb/11.jpeg",
+  "raosaheb/12.jpeg",
+  "raosaheb/13.jpeg",
+  "raosaheb/14.jpeg",
+  "raosaheb/15.jpeg",
+  "raosaheb/16.jpeg",
+  "raosaheb/17.jpeg",
+  "raosaheb/18.jpeg",
+  "raosaheb/19.jpeg",
+  "raosaheb/20.jpeg",
+  // Add more here if present
+];
+
+images.forEach(img => {
+    const imageElement = document.createElement("img");
+    imageElement.src = "images/" + img;
+    gallery.appendChild(imageElement);
+});
+
+
+</script>
+
+<script>
+history.scrollRestoration = "manual";
+window.onload = function(){
+    window.scrollTo(0,0);
+};
+</script>
+
+</body>
+</html>
